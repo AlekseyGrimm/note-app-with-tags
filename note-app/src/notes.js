@@ -2,9 +2,8 @@ import React from 'react';
 import './notes.scss';
 import { connect } from 'react-redux';
 import TagsInput from 'react-tagsinput'
-import { newNote } from './actions';
+import { newNote} from './actions';
 import Note from './note'
-
 const mapStateToProps = state => {
   if (state.notes === false) {
     return { notes: [] };
@@ -61,5 +60,4 @@ class Notes extends React.Component {
     );
   }
 }
-
 export default connect(mapStateToProps)(Notes);

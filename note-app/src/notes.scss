@@ -1,5 +1,5 @@
 @import "TagInput";
-$primary-color: #6da7e0;
+$primary-color: #e6e7e8;
 html {
   height: 100%;
   overflow: hidden;
@@ -39,13 +39,22 @@ body {
 }
 .notes-toolbar__button {
   font-size: 1rem;
-  background: linear-gradient(to bottom, #e5d5d5 5%, #ce163d 100%);
+  box-shadow: 3px 4px 0px 0px #899599;
+  background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+  background-color: #ededed;
+  border-radius: 15px;
+  border: 1px solid #d6bcd6;
+  display: inline-block;
   cursor: pointer;
+  color: #3a8a9e;
+  font-family: Arial;
   padding: 7px 25px;
-  border-radius: 20px;
-  
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #e1e2ed;
+  outline: none;
+  margin-bottom: 0.5rem;
   &:hover {
-    background: linear-gradient(to bottom, #20f503 5%, #8edb28 100%);
+    background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
     background-color: #bab1ba;
   }
   &:active {
@@ -56,16 +65,26 @@ body {
 .notes-container {
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  justify-content: flex-end;
+  padding: 1rem 0;
+  overflow: scroll;
 }
 .tags-filter {
   display: flex;
   width: 80%;
+  margin: 1rem 2rem;
+  height: 2rem;
   justify-content: center;
 }
 .note-node {
   position: relative;
   display: flex;
   flex-direction: column;
+  border: 1px solid $primary-color;
+  align-items: center;
   width: 80%;
   margin: 1rem 0.5rem;
   .note-node__tags {
@@ -91,15 +110,15 @@ body {
   }
 }
 .YourHighlightClass {
-  background-color: #ff0000a9;
+  background-color: orange;
 }
 .HighLight {
   font-size: 1rem;
-  margin: 1em;
+  height: 4rem;
   min-width: 90%;
   width: 90%;
   max-width: 90%;
-  border-bottom: 0.5px solid #ec0e0e;
+  border-bottom: 0.5px solid $primary-color;
 }
 .notes-wrapper {
   width: 100%;
