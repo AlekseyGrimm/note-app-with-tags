@@ -7,7 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TagsInput from 'react-tagsinput'
 import Highlighter from "react-highlight-words"
 import { noteTextChange, deleteNote, changeTags } from './actions';
+
 library.add(fab, faTimesCircle)
+
 class Note extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +22,7 @@ class Note extends React.Component {
         if (result.match(/#[\w\d]+\W/g) !== null) {
             let newTags = result.match(/#[\w\d]+\W/g);
             newTags.forEach(newTag => {
-                let newTagTrimmed = newTag.slice(0,-1).slice(1);
+                let newTagTrimmed = newTag.slice(0, -1).slice(1);
                 if (this.props.tags.includes(newTagTrimmed) === false) {
                     this.props.dispatch(changeTags(this.props.index, this.props.tags.concat(newTagTrimmed)));
                 }
@@ -94,4 +96,6 @@ class Note extends React.Component {
         } else { return null }
     }
 }
+
+
 export default Note;
